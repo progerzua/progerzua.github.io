@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include post_header.html %}
+<!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			{{ content }}
+		<div class="post-preview">
+		<p class="post-meta"> Опубліковано: {{ page.date | date: "%b %-d, %Y" }} </p>
+		</div>
+</div></div></div></article>
+<hr>
+
+    {% include footer.html %}
+    <!-- jQuery -->
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
