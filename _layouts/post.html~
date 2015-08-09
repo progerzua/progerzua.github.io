@@ -93,8 +93,8 @@
    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
    
    <!-- Fancybox -->
-   <link rel="stylesheet" href="static/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-   <script type="text/javascript" src="static/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+   <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="/static/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
    
    <script type="text/javascript">
 	$(document).ready(function() {
