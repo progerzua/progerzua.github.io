@@ -10,7 +10,6 @@ background_color: transparent
 font_color: white
 datestring: 9 Серпня 2015
 share_button: some description
-social_image: http://allsoft.ru/bitrix/templates/allsoft2011/images/8let/dragon_normal.jpg
 ---
 lalalala
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
