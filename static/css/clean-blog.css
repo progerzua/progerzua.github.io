@@ -21,6 +21,7 @@ p {
 }
 p a {
   text-decoration: underline;
+  color:#ee9285;
 }
 h1,
 h2,
@@ -32,7 +33,7 @@ h6 {
   font-weight: 500;
 }
 a {
-  color: #ee9285;
+  color: #404040;
 }
 a:hover,
 a:focus {
