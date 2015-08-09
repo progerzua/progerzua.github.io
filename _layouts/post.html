@@ -8,14 +8,74 @@
     {% include post_header.html %}
 <!-- Post Content -->
     <article>
-        <div class="container">
-            <div class="row">
+<div class="container">
+	<div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			{{ content }}
-		<div class="post-preview">
-		<p class="post-meta"> Опубліковано: {{ page.date | date: "%b %-d, %Y" }} </p>
+			<div class="post-preview">
+				<p class="post-meta"> Опубліковано: {{ page.datestring }} </p>
+			</div>
+
+				<!-- SHARE -->
+					<table width="100%" >
+					<tr>
+						<td>
+						<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+						<span id="ya_share1"></span>
+						<script type="text/javascript">
+						new Ya.share({
+							theme: 'counter',
+							element: 'ya_share1',
+								elementStyle: {
+									'type': 'icon',
+									'border': false,
+									'quickServices': [ 'vkontakte','twitter','facebook' ,'gplus']
+								},
+								link: window.location.href,
+								title: '{{ page.title }}',
+								description: '{{ page.share_button }}',
+								serviceSpecific: {
+									twitter: {
+										 title: '{{ site.title }} | '
+									}
+								}
+							});
+						</script>
+
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<!-- ENDBLOCK -->
+
+
+
+			<!-- DISQUS VISCAS -->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'creamyme';
+			    
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+			<!-- ENDBLOCK -->
+
 		</div>
-</div></div></div></article>
+	</div>
+</div>
+
+
+</article>
 <hr>
 
     {% include footer.html %}
@@ -27,6 +87,20 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/static/js/clean-blog.min.js"></script>
+    
+   <!-- fotorama.css & fotorama.js. -->
+   <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+   
+   <!-- Fancybox -->
+   <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="/static/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+   
+   <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+   </script>
 
   </body>
 

@@ -1,13 +1,15 @@
 ---
 permalink: /slig
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Jekyll! TWICE TWICE"
 date:   2015-08-08 23:25:12
 categories: jekyll
 shortinfo: some short info here
 top_url: /media/about-bg.jpg
 background_color: transparent
 font_color: white
+datestring: 9 Серпня 2015
+share_button: some description
 ---
 lalalala
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

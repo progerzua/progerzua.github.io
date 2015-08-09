@@ -29,6 +29,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+   <meta property="og:image" content="http://allsoft.ru/bitrix/templates/allsoft2011/images/8let/dragon_normal.jpg" />
+   <meta property="og:title" content="Welcome to Jekyll! TWICE TWICE" />
+   <meta property="og:description" content="some description" />
+
 </head>
 
 
@@ -63,8 +67,8 @@
 
 <!-- Post Content -->
     <article>
-        <div class="container">
-            <div class="row">
+<div class="container">
+	<div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<p>lalalala
 You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
@@ -82,10 +86,70 @@ You’ll find this post in your <code>_posts</code> directory. Go ahead and edit
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
 
 
-		<div class="post-preview">
-		<p class="post-meta"> Опубліковано: Aug 9, 2015 </p>
+			<div class="post-preview">
+				<p class="post-meta"> Опубліковано: 9 Серпня 2015 </p>
+			</div>
+
+				<!-- SHARE -->
+					<table width="100%" >
+					<tr>
+						<td>
+						<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+						<span id="ya_share1"></span>
+						<script type="text/javascript">
+						new Ya.share({
+							theme: 'counter',
+							element: 'ya_share1',
+								elementStyle: {
+									'type': 'icon',
+									'border': false,
+									'quickServices': [ 'vkontakte','twitter','facebook' ,'gplus']
+								},
+								link: window.location.href,
+								title: 'Welcome to Jekyll! TWICE TWICE',
+								description: 'some description',
+								serviceSpecific: {
+									twitter: {
+										 title: 'Flight of thoughts | '
+									}
+								}
+							});
+						</script>
+
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<!-- ENDBLOCK -->
+
+
+
+			<!-- DISQUS VISCAS -->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'creamyme';
+			    
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+			<!-- ENDBLOCK -->
+
 		</div>
-</div></div></div></article>
+	</div>
+</div>
+
+
+</article>
 <hr>
 
      <!-- Footer -->
@@ -117,6 +181,8 @@ You’ll find this post in your <code>_posts</code> directory. Go ahead and edit
         </div>
     </footer>
 
+<!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter26483556 = new Ya.Metrika({ id:26483556, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/26483556" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
     <!-- jQuery -->
     <script src="/static/js/jquery-1.11.1.min.js"></script>
 
@@ -125,6 +191,20 @@ You’ll find this post in your <code>_posts</code> directory. Go ahead and edit
 
     <!-- Custom Theme JavaScript -->
     <script src="/static/js/clean-blog.min.js"></script>
+    
+   <!-- fotorama.css & fotorama.js. -->
+   <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+   
+   <!-- Fancybox -->
+   <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="/static/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+   
+   <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+   </script>
 
   </body>
 
