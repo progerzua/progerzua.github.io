@@ -32,4 +32,5 @@
    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
    <meta property="og:description" content="{% if page.share_button %}{{ page.share_button }}{% else %}{{ site.description }}{% endif %}" />
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:type" content="website" />
 </head>
