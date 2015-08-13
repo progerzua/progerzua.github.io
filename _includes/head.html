@@ -2,6 +2,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="{% if page.social_image %}{{ page.social_image }}{% else %}{{ site.default_image }}{% endif %}" />
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:description" content="{% if page.share_button %}{{ page.share_button }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
@@ -27,10 +32,4 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-   <meta property="og:image" content="{% if page.social_image %}{{ page.social_image }}{% else %}{{ site.default_image }}{% endif %}" />
-   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-   <meta property="og:description" content="{% if page.share_button %}{{ page.share_button }}{% else %}{{ site.description }}{% endif %}" />
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-    <meta property="og:type" content="website" />
 </head>
