@@ -1,0 +1,137 @@
+   <!-- 
+   You could see there a lot of shitty things
+   Was written very fast, only to show BubbleSort in the action
+   -->
+   <head>
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+   <style>
+         li.L0, li.L1, li.L2, li.L3,
+         li.L5, li.L6, li.L7, li.L8
+         { list-style-type: decimal !important }
+         
+         #code_wrapper {
+            width:600px;
+            margin-left:50px;
+            margin-top:10px;
+            display: inline-block;
+         }
+         
+         #variables {
+          display: inline-block;
+          position: absolute;
+          top: 30px;
+          margin-left: 30px;
+          }
+          
+          #buttons_wrapper {
+            text-align:center;
+          }
+          
+          .vars {
+            display:inline;
+          }
+          
+          #alfa {
+            margin-bottom:15px;
+            text-align:center;
+          }
+          
+          #alfa td {
+            padding:10px;
+          }
+          
+          #big_wrapper {
+          margin: 0 auto;
+          width: 1100px;
+          }
+          
+      </style>
+   </head>
+   <body>
+      <div id="big_wrapper">
+         <div id="code_wrapper">
+            <pre class="prettyprint linenums">
+public class Sortex4 { 
+   public static void main(String[] args) { 
+      int alfa [][] = new int [6][7]; 
+      int k; 
+      for (int i=0; i < 6; i++) 
+         for (int j=0; j < 7; j++) { 
+            k = (int) (Math.random() * (9 - 0) + 0); 
+            alfa [i][j]=k; 
+         } 
+      
+      for (int i=0; i < 6; i++) { 
+         for (int j=0; j < 7; j++) 
+            System.out.print (alfa [i] [j] + " "); 
+         System.out.println(); 
+      } 
+      
+      System.out.println("====================="); 
+
+      for (int i=0; i < 6; i++) { 
+         sorted(alfa[i]); 
+      } 
+      for (int i=0; i < 6; i++) { 
+         for (int j=0; j < 7; j++) 
+         System.out.print (alfa [i] [j] + " "); 
+      System.out.println(); 
+      } 
+   } 
+   
+   public static void sorted (int [] alfa) { 
+      int i,j; 
+      for ( i=alfa.length-1; i>0; i--){ 
+         for( j=0; j < i; j++) { 
+            if (alfa[j] > alfa[j+1]) { 
+               int temp = alfa [j]; 
+               alfa [j] = alfa [j+1]; 
+               alfa[j+1] = temp; 
+            } 
+         } 
+      } 
+   } 
+}
+            </pre>
+         </div>
+         <div id="variables">
+            <table id="alfa" border="1">
+               <tbody><tr id="r0"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r1"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r2"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r3"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r4"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r5"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+            </tbody></table>
+            <p class="vars">k: </p>
+               <p class="vars" id="k"></p>
+               <p></p>
+            <p class="vars">i: </p>
+               <p class="vars" id="i"></p>
+            <p></p>
+            <p class="vars">j: </p>
+            <p class="vars" id="j"></p>
+            <p></p>
+            <p class="vars">temp: </p>
+            <p class="vars" id="temp"></p>
+            <p></p>
+            <p class="vars">steps: </p>
+            <p class="vars" id="steps"></p>
+            <p></p>
+            <p class="vars">current step: </p>
+            <p class="vars" id="curstep"></p>
+            <p></p>
+            <form action="javascript:executeStep(document.getElementById('setstep').value);">
+              Set the step
+              <input type="number" name="quantity" id="setstep">
+              <input type="submit">
+            </form>
+         </div>
+      </div>
+      <div id="buttons_wrapper">
+         <button onclick="executeStep(--currentStep);">Prev step</button>
+         <button onclick="executeStep(++currentStep);">Next step</button>
+      </div>
+      
+      <script src="sorting.js"></script>
+   </body>
