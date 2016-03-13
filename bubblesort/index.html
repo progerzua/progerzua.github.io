@@ -3,6 +3,7 @@
    Was written very fast, only to show BubbleSort in the action
    -->
    <head>
+   <meta charset="UTF-8">
    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
    <style>
          li.L0, li.L1, li.L2, li.L3,
@@ -28,7 +29,8 @@
           }
           
           .vars {
-            display:inline;
+            display: inline;
+            padding: 3px;
           }
           
           #alfa {
@@ -45,9 +47,86 @@
           width: 1100px;
           }
           
+          .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            opacity:0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+         }
+         
+         .modalDialog:target {
+            opacity:1;
+            pointer-events: auto;
+         }
+
+         .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #999);
+            background: -webkit-linear-gradient(#fff, #999);
+            background: -o-linear-gradient(#fff, #999);
+         }
+                   
+         .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+         }
+
+         .close:hover { background: #00d9ff; }
+         
+         #help{
+            position:absolute;
+            left: 40%;
+            margin-top: 0px;
+         }
+         
+         .help {
+            padding-left:5px;
+            padding-right:5px;
+            background-color:black;
+            color:white;
+            font-weight:bold;
+            text-decoration:none;
+            top:0px;
+         }
+         .help:hover {
+            background-color:#C3C0FF;
+            color:black;
+            text-decoration:none;
+         }
       </style>
    </head>
    <body>
+   <p id="help"> Це можна клікнути --->
+   <a href="#openModal" class="help">HELP</a>
+   </p>
       <div id="big_wrapper">
          <div id="code_wrapper">
             <pre class="prettyprint linenums">
@@ -131,6 +210,19 @@ public class Sortex4 {
       <div id="buttons_wrapper">
          <button onclick="executeStep(--currentStep);">Prev step</button>
          <button onclick="executeStep(++currentStep);">Next step</button>
+      </div>
+
+      <div id="openModal" class="modalDialog">
+         <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Сортування бульбашкою (Сортировка пузырьком)</h2>
+            <p>Дане демо допоможе зрозуміти, як виконується код, і як працює сортування</p>
+            <p>Ліворуч ти можеш побачити виконуваний код. Червоним підсвічується те, що виконується на даному кроці</p>
+            <p>Праворуч ти можеш побачити, значення перемінних на даному кроці</p>
+            <p>Червоним підсвічується перемінна, яка змінилася на даному кроці порівняно з попереднім</p>
+            <p>Також тут є поле, куди можна ввести номер кроку(якщо ти не хочеш проклацувати 50 кроків)</p>
+            <p>Кнопки <b>Next step</b> та <b> Prev step</b> відповідають за перехід до певного кроку відповідно</p>
+         </div>
       </div>
       
       <script src="sorting.js"></script>

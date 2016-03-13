@@ -7,6 +7,7 @@ var steps = [];
 var currentStep = 0;
 var speciali = null, specialj = null;
 var temp = null;
+//window.location.hash = '#openModal';
 
 function addStep(line){
    var clone = new Array(6);
@@ -19,10 +20,16 @@ function addStep(line){
          clone[ii][jj] = alfa[ii][jj];
       }
    }
-   if (speciali === null && specialj === null){
-      steps.push([line-1, clone, k,i,j,temp]);
+   
+   
+   if (speciali === null && specialj === null && line === 20){
+      steps.push([line-1, clone, k,is,j,temp]);
    } else {
-      steps.push([line-1, clone, k,speciali,specialj,temp]);
+      if (line === 20){
+         steps.push([line-1, clone, k,is,specialj,temp]);
+      } else {
+         steps.push([line-1, clone, k,speciali,specialj,temp]);
+      }
    }
 }
 
@@ -68,10 +75,46 @@ function executeStep(number){
       }
       
       var alfa = steps[number][1];
+      var i = steps[number][3];
+      var j = steps[number][4];
+      var k = steps[number][2];
+      var temp = steps[number][5];
       if (number > 1){
          var oldAlfa = steps[number - 1][1];
+         var oldi = steps[number - 1][3];
+         var oldj = steps[number - 1][4];
+         var oldk = steps[number - 1][2];
+         var oldtemp = steps[number - 1][5];
       } else {
          var oldAlfa = null;
+         var oldi = null;
+         var oldj = null;
+         var oldk = null;
+         var oldtemp = null;
+      }
+      
+      if (i !== oldi){
+         document.getElementById("i").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      } else {
+         document.getElementById("i").setAttribute("style", "");
+      }
+      
+      if (j !== oldj){
+         document.getElementById("j").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      } else {
+         document.getElementById("j").setAttribute("style", "");
+      }
+      
+      if (k !== oldk){
+         document.getElementById("k").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      } else {
+         document.getElementById("k").setAttribute("style", "");
+      }
+      
+      if (temp !== oldtemp){
+         document.getElementById("temp").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      } else {
+         document.getElementById("temp").setAttribute("style", "");
       }
       
       for(i = 0; i < 6; i++){
@@ -86,6 +129,7 @@ function executeStep(number){
             }
          }
       }
+      
    }
 }
 
@@ -118,6 +162,8 @@ for(i = 0; i < 6; i++){
 
 
 var k = null,i = null,j = null,temp = null;
+var is = null; // i for 'for' where sorted called
+addStep(3); // Will be never executed. Dirt hack
 addStep(3);
 addStep(4);
 
@@ -131,9 +177,9 @@ for(i = 0; i < 6; i++){
 }
 
 
-for (i = 0; i < 6; i++){
-   sorted(alfa[i]);
+for (is = 0; is < 6; is++){
    addStep(20);
+   sorted(alfa[is]);
 }
 
 document.getElementById("steps").innerHTML = steps.length;
