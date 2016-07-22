@@ -406,3 +406,19 @@ body {
     min-width: 50px;
 }
 
+.pagination {
+   text-align:center;
+   width: 100%;
+}
+
+.pagination .previous{
+   float:left;
+}
+
+.pagination .next{
+   float:right;
+}
+
+.previous, .next {
+   color:#ee9285;
+}

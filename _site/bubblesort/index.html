@@ -1,0 +1,229 @@
+   <!-- 
+   You could see there a lot of shitty things
+   Was written very fast, only to show BubbleSort in the action
+   -->
+   <head>
+   <meta charset="UTF-8">
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+   <style>
+         li.L0, li.L1, li.L2, li.L3,
+         li.L5, li.L6, li.L7, li.L8
+         { list-style-type: decimal !important }
+         
+         #code_wrapper {
+            width:600px;
+            margin-left:50px;
+            margin-top:10px;
+            display: inline-block;
+         }
+         
+         #variables {
+          display: inline-block;
+          position: absolute;
+          top: 30px;
+          margin-left: 30px;
+          }
+          
+          #buttons_wrapper {
+            text-align:center;
+          }
+          
+          .vars {
+            display: inline;
+            padding: 3px;
+          }
+          
+          #alfa {
+            margin-bottom:15px;
+            text-align:center;
+          }
+          
+          #alfa td {
+            padding:10px;
+          }
+          
+          #big_wrapper {
+          margin: 0 auto;
+          width: 1100px;
+          }
+          
+          .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            opacity:0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+         }
+         
+         .modalDialog:target {
+            opacity:1;
+            pointer-events: auto;
+         }
+
+         .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #999);
+            background: -webkit-linear-gradient(#fff, #999);
+            background: -o-linear-gradient(#fff, #999);
+         }
+                   
+         .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+         }
+
+         .close:hover { background: #00d9ff; }
+         
+         #help{
+            position:absolute;
+            left: 40%;
+            margin-top: 0px;
+         }
+         
+         .help {
+            padding-left:5px;
+            padding-right:5px;
+            background-color:black;
+            color:white;
+            font-weight:bold;
+            text-decoration:none;
+            top:0px;
+         }
+         .help:hover {
+            background-color:#C3C0FF;
+            color:black;
+            text-decoration:none;
+         }
+      </style>
+   </head>
+   <body>
+   <p id="help"> Це можна клікнути --->
+   <a href="#openModal" class="help">HELP</a>
+   </p>
+      <div id="big_wrapper">
+         <div id="code_wrapper">
+            <pre class="prettyprint linenums">
+public class Sortex4 { 
+   public static void main(String[] args) { 
+      int alfa [][] = new int [6][7]; 
+      int k; 
+      for (int i=0; i < 6; i++) 
+         for (int j=0; j < 7; j++) { 
+            k = (int) (Math.random() * (9 - 0) + 0); 
+            alfa [i][j]=k; 
+         } 
+      
+      for (int i=0; i < 6; i++) { 
+         for (int j=0; j < 7; j++) 
+            System.out.print (alfa [i] [j] + " "); 
+         System.out.println(); 
+      } 
+      
+      System.out.println("====================="); 
+
+      for (int i=0; i < 6; i++) { 
+         sorted(alfa[i]); 
+      } 
+      for (int i=0; i < 6; i++) { 
+         for (int j=0; j < 7; j++) 
+         System.out.print (alfa [i] [j] + " "); 
+      System.out.println(); 
+      } 
+   } 
+   
+   public static void sorted (int [] alfa) { 
+      int i,j; 
+      for ( i=alfa.length-1; i>0; i--){ 
+         for( j=0; j < i; j++) { 
+            if (alfa[j] > alfa[j+1]) { 
+               int temp = alfa [j]; 
+               alfa [j] = alfa [j+1]; 
+               alfa[j+1] = temp; 
+            } 
+         } 
+      } 
+   } 
+}
+            </pre>
+         </div>
+         <div id="variables">
+            <table id="alfa" border="1">
+               <tbody><tr id="r0"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r1"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r2"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r3"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r4"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+               <tr id="r5"><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td><td id=""></td></tr>
+            </tbody></table>
+            <p class="vars">k: </p>
+               <p class="vars" id="k"></p>
+               <p></p>
+            <p class="vars">i: </p>
+               <p class="vars" id="i"></p>
+            <p></p>
+            <p class="vars">j: </p>
+            <p class="vars" id="j"></p>
+            <p></p>
+            <p class="vars">temp: </p>
+            <p class="vars" id="temp"></p>
+            <p></p>
+            <p class="vars">steps: </p>
+            <p class="vars" id="steps"></p>
+            <p></p>
+            <p class="vars">current step: </p>
+            <p class="vars" id="curstep"></p>
+            <p></p>
+            <form action="javascript:executeStep(document.getElementById('setstep').value);">
+              Set the step
+              <input type="number" name="quantity" id="setstep">
+              <input type="submit">
+            </form>
+         </div>
+      </div>
+      <div id="buttons_wrapper">
+         <button onclick="executeStep(--currentStep);">Prev step</button>
+         <button onclick="executeStep(++currentStep);">Next step</button>
+      </div>
+
+      <div id="openModal" class="modalDialog">
+         <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Сортування бульбашкою (Сортировка пузырьком)</h2>
+            <p>Дане демо допоможе зрозуміти, як виконується код, і як працює сортування</p>
+            <p>Ліворуч ти можеш побачити виконуваний код. Червоним підсвічується те, що виконується на даному кроці</p>
+            <p>Праворуч ти можеш побачити, значення перемінних на даному кроці</p>
+            <p>Червоним підсвічується перемінна, яка змінилася на даному кроці порівняно з попереднім</p>
+            <p>Також тут є поле, куди можна ввести номер кроку(якщо ти не хочеш проклацувати 50 кроків)</p>
+            <p>Кнопки <b>Next step</b> та <b> Prev step</b> відповідають за перехід до певного кроку відповідно</p>
+         </div>
+      </div>
+      
+      <script src="sorting.js"></script>
+   </body>

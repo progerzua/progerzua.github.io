@@ -1,7 +1,7 @@
 ---
 layout: homepage
 ---
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
 			<div class="post-preview">
 				<h2>
 				  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -13,4 +13,14 @@ layout: homepage
 <hr></hr>
     {% endfor %}
 
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path }}" class="previous">Попередня</a>
+  {% endif %}
+  <span class="page_number ">Сторінка: {{ paginator.page }} з {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Наступна</a>
+  {% endif %}
+</div>
 </div>
